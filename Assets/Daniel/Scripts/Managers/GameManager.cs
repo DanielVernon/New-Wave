@@ -6,7 +6,7 @@ using UnityEngine;
 /// - pausing game
 /// - respawning player
 /// - keeping track of highscores and stats
-/// - 
+/// - saving and loading
 /// </summary>
 public class GameManager : MonoBehaviour {
     static GameManager manager = new GameManager();

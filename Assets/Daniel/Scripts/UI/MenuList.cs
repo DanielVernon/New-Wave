@@ -15,7 +15,7 @@ public class MenuList : MonoBehaviour
 {
     public UIType UIdirection = UIType.Horizontal;
     public GameObject Pointer;
-    
+    public Vector2 pointerOffset = Vector2.zero;
     private bool paused;
 
     [Tooltip("must be ordered left-right / Up-Down")]
@@ -66,7 +66,7 @@ public class MenuList : MonoBehaviour
 
         //Scroll
         if(Pointer != null)
-        Pointer.transform.position = new Vector3(Pointer.transform.position.x, UIElements[enumerator].obj.transform.position.y);
+            Pointer.transform.position = new Vector3(UIElements[enumerator].obj.transform.position.x + pointerOffset.x, UIElements[enumerator].obj.transform.position.y + pointerOffset.y);
     }
 
     public void Enumerate(int enumerationAmount)
