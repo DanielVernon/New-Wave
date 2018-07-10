@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// TODO:
+/// - Setup the input manager to work for controllers or buy rewired
+/// </summary>
+
 [RequireComponent(typeof(Rigidbody2D), typeof(ShootWave))]
 public class PlayerController : MonoBehaviour {
     public PlayerInput playerInput = new PlayerInput();
