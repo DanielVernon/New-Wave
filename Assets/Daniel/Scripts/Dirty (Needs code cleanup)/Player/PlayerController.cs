@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(ShootWave))]
 public class PlayerController : MonoBehaviour {
+
     public PlayerInput playerInput = new PlayerInput();
     public Sounds sounds = new Sounds();
     public ProjectileSettings projectileSettings = new ProjectileSettings();

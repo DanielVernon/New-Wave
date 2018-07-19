@@ -4,14 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-
-
 /// <summary>
 /// Things that aren't done
 /// Need to call disable function on all UIElements when popup appears
 /// need to create MenuManager scripts to keep track of layers
 /// </summary>
 [RequireComponent(typeof(RectTransform))]
+[HelpURL("https://en.wikipedia.org/wiki/Doxygen")]
 public class MenuLayer : MonoBehaviour {
     public LayerType layerType;
 
@@ -61,6 +60,7 @@ public class MenuLayer : MonoBehaviour {
 
 
     public List<UIElement> interactables = new List<UIElement>();
+
     void RefreshInteractables(GameObject target = null, bool includeChildren = true)
     {
         //Start at root object if haven't started yet
@@ -118,7 +118,7 @@ public class MenuLayer : MonoBehaviour {
             }
         }
 
-        if(includeChildren)
+        if (includeChildren)
         {
             for (int i = 0; i < viableChildren.Count; i++)
             {
