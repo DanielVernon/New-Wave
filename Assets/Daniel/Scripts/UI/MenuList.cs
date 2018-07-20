@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using System.Linq;
-
+using Sirenix.OdinInspector;
 public enum UIType
 {
     Horizontal,
@@ -13,18 +13,34 @@ public enum UIType
 }
 public class MenuList : MonoBehaviour
 {
+    //[]
     public UIType UIdirection = UIType.Horizontal;
     public GameObject Pointer;
+    
     public Vector2 pointerOffset = Vector2.zero;
-    private bool paused;
+   // public bool twoDimentional = false;
+    //[ShowIf("twoDimentional")]
+   // [TableList]
+   // public List<List<GUIElement>> gUIElements = new List<List<GUIElement>>();
 
+   // [HideIf("twoDimentional")]
     [Tooltip("must be ordered left-right / Up-Down")]
     public List<GUIElement> UIElements = new List<GUIElement>();
     public int enumerator = 0;
+    public int enumerator2 = 0;
 
-
+    private bool paused;
     private void Awake()
     {
+        //if (twoDimentional)
+        //{
+        //    UIElements = null;
+        //}
+        //else
+        //{
+        //    gUIElements = null;
+        //}
+
         paused = false;
         //Player = GameObject.FindGameObjectWithTag("Player");
 
@@ -50,7 +66,6 @@ public class MenuList : MonoBehaviour
 
     public void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             TriggerLeftRightInput(-1);
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
@@ -64,7 +79,7 @@ public class MenuList : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)))
             TriggerUpDownInput(1);
 
-        //Scroll
+        // Scroll
         if(Pointer != null)
             Pointer.transform.position = new Vector3(UIElements[enumerator].obj.transform.position.x + pointerOffset.x, UIElements[enumerator].obj.transform.position.y + pointerOffset.y);
     }
@@ -188,10 +203,11 @@ public class MenuList : MonoBehaviour
     public class GUIElement
     {
         public GameObject obj;
-        [HideInInspector]
+        //[HideInInspector]
         public ElementType type = ElementType.none;
 
         //[HideInInspector]
+        [ShowIf("type", ElementType.Slider)]
         public float sliderSensitivity = 1.0f;
         
     }

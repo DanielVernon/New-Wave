@@ -63,7 +63,7 @@ public class MenuLayer : MonoBehaviour {
 
     void RefreshInteractables(GameObject target = null, bool includeChildren = true)
     {
-        //Start at root object if haven't started yet
+        // Start at root object if haven't started yet
         if (!target || target.GetInstanceID() == gameObject.GetInstanceID())
         {
             target = gameObject;
@@ -137,12 +137,10 @@ public class MenuLayer : MonoBehaviour {
 		
 	}
 
-
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
 
     public void Activate()
     {
@@ -153,18 +151,21 @@ public class MenuLayer : MonoBehaviour {
         switch (type)
         {
             case LayerType.layer:
-            {//Override previous Layer, previous layer reset?
+            { // Override previous Layer, previous layer reset?
                 
                 break;
             }
             case LayerType.Tab:
-            {//previous layer not reset
+            { // previous layer not reset
                 
                 break;
             }
             case LayerType.Popup:
-            {// appears over other layers, doesn't
-                 
+            { // appears over other layers, doesn't
+                    for (int i = 0; i < interactables.Count; i++)
+                    {
+                        interactables[i].obj.active = true;
+                    }
                 break;
             }
             default:
@@ -172,6 +173,10 @@ public class MenuLayer : MonoBehaviour {
         }
     }
 
+    public void Deactivate()
+    {
+
+    }
 
     [System.Serializable]
     public class UIElement

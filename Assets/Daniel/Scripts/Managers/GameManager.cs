@@ -8,11 +8,32 @@ using UnityEngine;
 /// - keeping track of highscores and stats
 /// - saving and loading
 /// </summary>
+
 public class GameManager : MonoBehaviour {
     static GameManager manager = new GameManager();
+    public GameManager Manager
+    {
+        get
+        {
+            if (!manager)
+            {
+                manager = new GameObject("GameManager").AddComponent<GameManager>();
+            }
+            return manager;
+        }
+    }
+    
 	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+        if (manager != null)
+        {
+            //gameObject.GetComponent<MenuManager>() = manager;
+            Destroy(gameObject);
+        }
+        else
+        {
+            manager = this;
+        }
 	}
 	
 	// Update is called once per frame

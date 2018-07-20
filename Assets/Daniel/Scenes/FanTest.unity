@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 705727858}
   - component: {fileID: 705727857}
   - component: {fileID: 705727859}
+  - component: {fileID: 705727860}
   m_Layer: 0
   m_Name: Fan
   m_TagString: Untagged
@@ -601,6 +602,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.42, y: 9.86}
   m_EdgeRadius: 0
+--- !u!114 &705727860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 705727856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ce2f7b4ad5a9e44bb83e53a8ea7a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingMenu: {fileID: 0}
 --- !u!1 &779276259
 GameObject:
   m_ObjectHideFlags: 0
