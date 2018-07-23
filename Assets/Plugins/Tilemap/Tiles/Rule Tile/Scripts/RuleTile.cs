@@ -65,8 +65,9 @@ namespace UnityEngine
 			TileBase[] neighboringTiles = null;
 			GetMatchingNeighboringTiles(tilemap, position, ref neighboringTiles);
 			var iden = Matrix4x4.identity;
+            
 
-			tileData.sprite = m_DefaultSprite;
+            tileData.sprite = m_DefaultSprite;
 			tileData.colliderType = m_DefaultColliderType;
 			tileData.flags = TileFlags.LockTransform;
 			tileData.transform = iden;

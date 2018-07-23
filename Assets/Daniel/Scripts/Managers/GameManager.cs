@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 /// <summary>
 /// What this script is meant to be managing
 /// - pausing game
@@ -10,6 +11,7 @@ using UnityEngine;
 /// </summary>
 
 public class GameManager : MonoBehaviour {
+    public Tilemap mainTileMap;
     static GameManager manager = new GameManager();
     public GameManager Manager
     {
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour {
         {
             manager = this;
         }
+        
 	}
 	
 	// Update is called once per frame

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [RequireComponent(typeof(ShootWave))]
 public class Turret : MonoBehaviour {
-
+    
     public float shootInterval = 2;
     public float shotLength = 3;
 
